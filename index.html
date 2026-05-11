@@ -2,125 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cama Inteligente DreamTech</title>
+    <title>Compra DreamTech</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 40px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-        }
-
-        header p {
-            font-size: 1.2em;
-        }
-
-        .container {
-            padding: 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .feature {
-            border: 1px solid #000;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .feature:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .feature h2 {
-            margin-top: 0;
-        }
-
-        .cta {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .cta button {
-            background-color: #000;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            font-size: 1em;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .cta button:hover {
-            background-color: #333;
-        }
-
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #000; }
+        header { background-color: #000; color: #fff; text-align: center; padding: 30px; }
+        .container { max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #000; border-radius: 10px; }
+        h2 { text-align: center; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #000; border-radius: 5px; box-sizing: border-box; }
+        button { margin-top: 20px; width: 100%; padding: 15px; background-color: #000; color: #fff; border: none; font-size: 1em; cursor: pointer; border-radius: 5px; }
+        button:hover { background-color: #333; }
+        footer { background-color: #000; color: #fff; text-align: center; padding: 15px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>DreamTech Bed</h1>
-    <p>La cama inteligente que transforma tu descanso</p>
+    <h1>Finalizar compra</h1>
 </header>
 
 <div class="container">
+    <h2>Completa tus datos</h2>
 
-    <div class="feature">
-        <h2>🛌 Medición de horas de sueño</h2>
-        <p>
-            Nuestra cama inteligente registra automáticamente tus horas de sueño cada noche.
-            Analiza la calidad de tu descanso para ayudarte a mejorar tus hábitos y despertar con más energía.
-        </p>
-    </div>
+    <!-- Se eliminaron los forms duplicados y se dejó solo uno funcional -->
+    <form action="guardar.php" method="POST">
+        <label for="dni">DNI</label>
+        <input type="text" id="dni" name="dni" required>
 
-    <div class="feature">
-        <h2>🌡️ Temperatura personalizada</h2>
-        <p>
-            Ajusta la temperatura de la cama según tus preferencias.
-            El sistema regula el calor o el frío en tiempo real para brindarte el ambiente perfecto para dormir.
-        </p>
-    </div>
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-    <div class="feature">
-        <h2>❤️ Monitoreo de pulsaciones</h2>
-        <p>
-            Sensores integrados miden tu ritmo cardíaco mientras duermes.
-            Esto permite detectar cambios importantes en tu descanso y mejorar tu bienestar general.
-        </p>
-    </div>
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" required>
 
-    <div class="cta">
-      <h2>Descubre el futuro del descanso</h2>
-      <a href="compra.html">
-          <button>Comprar ahora</button>
-      </a>
-  </div>
+        <label for="pago">Método de pago</label>
+        <select id="pago" name="pago" required>
+            <option value="">Seleccionar...</option>
+            <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+            <option value="Tarjeta de débito">Tarjeta de débito</option>
+            <option value="Transferencia bancaria">Transferencia bancaria</option>
+            <option value="Pago contra entrega">Pago contra entrega</option>
+        </select>
+
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Confirmar compra</button>
+    </form>
 </div>
 
 <footer>
-    <p>© 2026 DreamTech - Todos los derechos reservados</p>
+    <p>© 2026 DreamTech</p>
 </footer>
 
 </body>
